@@ -42,9 +42,8 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Boolean deleteCustomer(Customer customer) {
-        repo.delete(customer);
-        return true;
+    public void deleteCustomer(Long id) {
+        getCustomerById(id);
+        repo.deleteById(id);
     }
-
 }
