@@ -6,8 +6,7 @@ import javax.validation.constraints.NotNull;
 
 public class CustomerDTO {
     @NotNull(message = "Nome do cliente é obrigatório")
-    @JsonProperty("costumer_name")
+    @JsonProperty("customer_name")
     public String name;
-    @NotNull
     public Long shoppingCartId;
 }
