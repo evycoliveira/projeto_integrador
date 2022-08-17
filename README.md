@@ -15,7 +15,7 @@ diferente. O modelo de negócio atualmente implementado em relação à forma co
 com os produtos frescos da indústria alimentar.
 
 ### 🎨 Diagrama de Entidade-Relacionamento:
-<img src="/Users/veloliveira/Documents/projeto_integrador/src/main/resources/docs/EER Diagram.svg">
+<img src="src/main/resources/docs/EER Diagram.svg">
 
 ---
 
