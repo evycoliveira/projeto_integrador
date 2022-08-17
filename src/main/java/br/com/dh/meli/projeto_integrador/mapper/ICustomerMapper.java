@@ -5,6 +5,12 @@ import br.com.dh.meli.projeto_integrador.model.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+/**
+ * Mapping Customer DTO to Model / Model to DTO
+ *
+ * @author Evelyn Cristini Oliveira
+ */
+
 @Mapper
 public interface ICustomerMapper {
     ICustomerMapper MAPPER = Mappers.getMapper(ICustomerMapper.class);

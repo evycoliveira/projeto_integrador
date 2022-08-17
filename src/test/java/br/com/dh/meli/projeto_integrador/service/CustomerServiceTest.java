@@ -22,6 +22,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.willDoNothing;
 import static org.mockito.Mockito.*;
 
+/**
+ * Class of Customer Service layer Unit Test
+ *
+ * @author Evelyn Cristini Oliveira
+ */
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 class CustomerServiceTest {

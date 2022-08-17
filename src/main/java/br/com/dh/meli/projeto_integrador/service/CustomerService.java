@@ -10,11 +10,22 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * Service for Customer Repository
+ * @author Evelyn Cristini Oliveira
+ */
 @Service
 public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository repo;
 
+    /**
+     * Get customer by id
+     *
+     * @param customerId payload of contents for get new customer
+     * @return Customer
+     * @author Evelyn Cristini Oliveira
+     */
     @Override
     public Customer getCustomerById(Long customerId) {
         Optional<Customer> customer = repo.findById(customerId);
@@ -24,11 +35,25 @@ public class CustomerService implements ICustomerService {
         return customer.get();
     }
 
+    /**
+     * Save customer
+     *
+     * @param customer payload of contents for save new customer
+     * @return Customer
+     * @author Evelyn Cristini Oliveira
+     */
     @Override
     public Customer saveCustomer(Customer customer) {
         return repo.save(customer);
     }
 
+    /**
+     * Create customer
+     *
+     * @param  customerDTO payload of contents for create customer
+     * @return Customer
+     * @author Evelyn Cristini Oliveira
+     */
     @Override
     public Customer createCustomer(CustomerDTO customerDTO) {
         Customer customer = ICustomerMapper.MAPPER.mappingCostumerDTOToCostumerModel(customerDTO);
@@ -36,6 +61,14 @@ public class CustomerService implements ICustomerService {
         return repo.save(customer);
     }
 
+    /**
+     * Update customer
+     *
+     * @param  customerDto payload of contents for update customer
+     * @param  customerId payload of contents for update customer
+     * @return Customer
+     * @author Evelyn Cristini Oliveira
+     */
     @Override
     public Customer updateCustomer(CustomerDTO customerDto, Long customerId) {
         getCustomerById(customerId);
@@ -44,6 +77,13 @@ public class CustomerService implements ICustomerService {
         return repo.save(customer);
     }
 
+    /**
+     * Delete customer
+     *
+     * @param  id payload of contents for update customer
+     * @return void
+     * @author Evelyn Cristini Oliveira
+     */
     @Override
     public void deleteCustomer(Long id) {
         getCustomerById(id);

@@ -8,6 +8,12 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * DTO for payload for add new Customer
+ *
+ * @author Evelyn Cristini Oliveira
+ */
+
 @Data
 @Builder
 @NoArgsConstructor
