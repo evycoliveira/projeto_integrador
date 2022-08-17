@@ -2543,7 +2543,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_Url}}/api/v1/customer/1",
+							"raw": "{{base_Url}}/api/v1/customer/:customerId",
 							"host": [
 								"{{base_Url}}"
 							],
@@ -2551,7 +2551,14 @@
 								"api",
 								"v1",
 								"customer",
-								"1"
+								":customerId"
+							],
+							"variable": [
+								{
+									"key": "customerId",
+									"value": "1",
+									"description": "Identificador do cliente. "
+								}
 							]
 						}
 					},
