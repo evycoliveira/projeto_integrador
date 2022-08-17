@@ -9,6 +9,6 @@ public interface ICustomerService {
     Customer getCustomerById(Long id);
     Customer saveCustomer(Customer customer);
     Customer createCustomer(CustomerDTO dto);
-    Customer updateCustomer(Customer customer);
+    Customer updateCustomer(CustomerDTO customerDto, Long customerId);
     void deleteCustomer(Long id);
 }

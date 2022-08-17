@@ -32,12 +32,15 @@ public class CustomerService implements ICustomerService {
     @Override
     public Customer createCustomer(CustomerDTO customerDTO) {
         Customer customer = ICustomerMapper.MAPPER.mappingCostumerDTOToCostumerModel(customerDTO);
+        customer.setName(customerDTO.getName());
         return repo.save(customer);
     }
 
     @Override
-    public Customer updateCustomer(Customer customer) {
-        getCustomerById(customer.getId());
+    public Customer updateCustomer(CustomerDTO customerDto, Long customerId) {
+        getCustomerById(customerId);
+        Customer customer = ICustomerMapper.MAPPER.mappingCostumerDTOToCostumerModel(customerDto);
+        customer.setName(customerDto.getName());
         return repo.save(customer);
     }
 
