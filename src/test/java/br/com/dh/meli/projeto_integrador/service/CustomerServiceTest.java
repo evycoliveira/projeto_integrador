@@ -88,6 +88,42 @@ class CustomerServiceTest {
     }
 
     /**
+     * Test to put customer by ID with valid customer ID
+     *
+     * @author Evelyn Cristini Oliveira
+     */
+    @DisplayName("Put Customer by id when customerId is valid")
+    @Test
+    void putCustomerById_returnSuccessfully_whenValidCustomerId() {
+        Customer newCustomer = Customer.builder().build();
+        newCustomer.setId(1L);
+        newCustomer.setName("Alexandre Borges");
+        when(repo.findById(1L)).thenReturn(Optional.of(newCustomer));
+        when(repo.save(ArgumentMatchers.any(Customer.class))).thenReturn(newCustomer);
+        CustomerDTO dto = new CustomerDTO("Evelyn Oliveira");
+        Customer customer = service.updateCustomer(dto, 1L);
+        assertThat(customer).isNotNull();
+        verify(repo, times(1)).findById(1L);
+    }
+
+    /**
+     * Test to save customer by ID with valid customer ID
+     *
+     * @author Evelyn Cristini Oliveira
+     */
+    @DisplayName("Save Customer when customer is customer")
+    @Test
+    void saveCustomerById_returnSuccessfully_whenValidCustomer() {
+        Customer newCustomer = Customer.builder().build();
+        newCustomer.setId(1L);
+        newCustomer.setName("Alexandre Borges");
+        when(repo.save(ArgumentMatchers.any(Customer.class))).thenReturn(newCustomer);
+        Customer result = service.saveCustomer(newCustomer);
+        assertThat(result.getName()).isNotNull();
+        verify(repo,times(1)).save(ArgumentMatchers.any(Customer.class));
+    }
+
+    /**
      * Test to delete customer by ID with invalid customer ID
      *
      * @author Evelyn Cristini Oliveira
