@@ -1,4 +1,5 @@
 -- inserções baseadas nos endereços:
+
 insert into country (name, initials, created_at, updated_at) values ("Brazil", "BRA", now(), now());
 insert into country (name, initials, created_at, updated_at) values ("Argentine", "ARG", now(), now());
 
@@ -19,6 +20,7 @@ insert into address (street, number, zipcode_id) values ("Rua Tenente Silva", 60
 insert into address (street, number, zipcode_id) values ("Av Escritor Graciliano Ramos", 12, 3);
 
 -- inserções baseadas no armazém
+
 insert into warehouse (code, address_id) values ("MLB-SP", 1);
 insert into warehouse (code, address_id) values ("MLB-SC", 2);
 
@@ -45,3 +47,13 @@ INSERT INTO section VALUES(null, 200, 2, 'FF', 2);
 -- advertisement
 
 INSERT INTO advertisement values(null, "description", 200.0, "leite", 1);
+
+-- customer
+
+insert into customer (name) values("Rebecca Cruz");
+insert into customer (name) values("Alex George Oliveira");
+insert into customer (name) values("Maria Aparecida Pereira de Oliveira");
+insert into customer (name) values("José Carlos Souza Oliveira");
+insert into customer (name) values("Larissa Manoela");
+insert into customer (name) values("Karine Oliveira");
+

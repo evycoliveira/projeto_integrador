@@ -12,6 +12,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.util.List;
 
+/**
+ * Customer Entity
+ *
+ * @author Evelyn Cristini Oliveira
+ */
+
 @Data
 @Builder
 @Entity

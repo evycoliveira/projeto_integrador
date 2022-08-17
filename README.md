@@ -1,20 +1,45 @@
-<h1 align=center> Produtos Frescos - Projeto Integrador </h1>
-<p align=center> TRANSFORMELI Grupo 2 </p>
+<h2 align="center">
+  MERCADO LIVRE: PRODUTOS FRESCOS
+</h2>
+<h6 align="center">
+	GRUPO II TRANSFORMELI - PROJETO INTEGRADOR FINAL
+</h6>
 <br>
 
-## ✅ Testes
-* Unitários [`src/test/java/br/com/dh/meli/projeto_integrador`](src/test/java/br/com/dh/meli/projeto_integrador)
+### 💻 Sobre o Projeto Integrador:
 
-## 🚩 Postman collection
-* Variveis do Postman [`src/main/resources/collection/workspace.postman_globals.json`](src/main/resources/collection/workspace.postman_globals.json)
-* Exemplos de Uso [`src/main/resources/collection/Projeto_Integrador.postman_collection.json`](src/main/resources/collection/Projeto_Integrador.postman_collection.json)
+O Mercado Livre quer expandir seus negócios para incluir em sua listagem (oferta) produtos frescos, uma vez que já vende produtos alimentícios, mas quer se aventurar a poder vender produtos que precisam
+de refrigeração.</br> 
+Armazenamento, transporte e comercialização dos produtos é um desafio a ser superado, uma vez que é feito de uma forma totalmente
+diferente. O modelo de negócio atualmente implementado em relação à forma como tratamos os nossos produtos é incompatível
+com os produtos frescos da indústria alimentar.
 
-## 📝 Proposta
+### 🎨 Diagrama de Entidade-Relacionamento:
+<img src="src/main/resources/docs/EER Diagram.svg">
+
+---
+
+### 🚩 Postman
+* [Variável de ambiente](https://go.postman.co/workspace/Bootcamp-Grupo2-Transformeli~bec298cb-2724-41e4-8abd-e2ef7d7e0394/environment/21824289-93f629d3-3810-4d32-ab08-ae48612d1726)
+* [Collection em JSON com requisitos obrigatórios e desafio individual](https://www.getpostman.com/collections/e881915e67de74a921ea)
+* [Collection com requisitos obrigatórios e desafio individual](https://go.postman.co/workspace/Bootcamp-Grupo2-Transformeli~bec298cb-2724-41e4-8abd-e2ef7d7e0394/collection/21600732-e5b7da0a-59e8-4923-8026-40d9bad8c514?action=share&creator=21600732)
+
+### ⚙️ Histórias de Usuario:
+
+- [x] Ml-insert-batch-in-fulfillment-warehouse-01
+- [x] Ml-add-products-to-cart-01
+- [x] Ml-check-product-location-in-warehouse-01
+- [x] Ml-check-product-stock-in-warehouses-04
+- [x] Ml-check-batch-stock-due-date-01
+- [x] Ml-customer-management-06
+---
+
+### 📝 Proposta
 Criar uma API REST que faz o gerenciamento de estoque e venda de produtos frescos.
 
 * API DE PRODUTOS FRESCOS
 
-## 🚀 Como clonar e iniciar a aplicação
+### 🚀 Como clonar e iniciar a aplicação
 
 - Abra seu terminal e digite o seguinte comando:
 
@@ -47,7 +72,7 @@ maven install
 mvn spring-boot:run
 ```
 
-## 👥 Membros do grupo
+### 👥 Membros do grupo
 
 - <a href="https://github.com/aborgssouzameli">Alexandre Borges Souza</a>
 - <a href="https://github.com/evycoliveira">Evelyn Cristini Oliveira</a>
