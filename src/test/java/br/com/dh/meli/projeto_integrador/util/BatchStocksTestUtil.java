@@ -3,6 +3,8 @@ package br.com.dh.meli.projeto_integrador.util;
 import br.com.dh.meli.projeto_integrador.dto.BatchStockDTO;
 import br.com.dh.meli.projeto_integrador.mapper.IBatchStockMapper;
 import br.com.dh.meli.projeto_integrador.model.BatchStock;
+import br.com.dh.meli.projeto_integrador.model.Warehouse;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,7 @@ public class BatchStocksTestUtil {
 
     /**
      * Generate empty BatchStockDTO
+     *
      * @return BatchStockDTO
      * @author Lucas Pinheiro Rocha
      * @author Alexandre Borges Souza
@@ -52,7 +55,19 @@ public class BatchStocksTestUtil {
     }
 
     /**
+     * Return BatchStock by BatchStockDTO
+     *
+     * @return BatchStock
+     * @author Alexandre Borges Souza
+     */
+    public static BatchStock batchStockSampleOneByDTO() {
+        BatchStock batchStock = IBatchStockMapper.MAPPER.mappingBatchStockDTOToBatchStock(batchStockDTOSampleOne());
+        return batchStock;
+    }
+
+    /**
      * Generate list of BatchStockDTO for payload
+     *
      * @return List<BatchStockDTO>
      * @author Lucas Pinheiro Rocha
      * @author Alexandre Borges Souza
@@ -65,12 +80,18 @@ public class BatchStocksTestUtil {
 
     /**
      * Generate list of BatchStockDTO
+     *
      * @return List<BatchStockDTO>
      * @author Lucas Pinheiro Rocha
      * @author Alexandre Borges Souza
      */
     public static List<BatchStock> listOfBatchStock() {
         List<BatchStockDTO> batchStockList = payloadForInboundOrderPayload();
-        return IBatchStockMapper.MAPPER.mapDTO(batchStockList);
+        List<BatchStock> mapped = IBatchStockMapper.MAPPER.mapDTO(batchStockList);
+        mapped.stream().forEach(model -> {
+            model.setInboundOrder(InboundOrderUtil.emptyInboundOrder());
+            model.setSection(SectionUtil.sectionGenerator(WarehouseUtil.warehouseGenerator(), mapped));
+        });
+        return mapped;
     }
 }

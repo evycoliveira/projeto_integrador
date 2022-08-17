@@ -55,7 +55,7 @@ public class ShoppingCartService implements IShoppingCartService {
         ShoppingCart shoppingCart = convertToModel(dto);
         List<Item> items = new ArrayList<>();
         dto.getItems().stream().forEach(itemDTO -> {
-            Item item = itemService.createItem(itemDTO, shoppingCart.getId());
+            Item item = itemService.createItem(itemDTO, shoppingCart);
             if(shoppingCart.getStatus().equals(Status.FECHADO)){
                 reserveBatchStockByItem(item);
                 itemService.save(item);
@@ -83,7 +83,7 @@ public class ShoppingCartService implements IShoppingCartService {
 
     private boolean verifyDueDate(LocalDate date) {
         long differenceData = DAYS.between(LocalDate.now(), date);
-        return differenceData < 21;
+        return differenceData >= 21;
     }
 
     private void decreaseQuantity( Item item){
